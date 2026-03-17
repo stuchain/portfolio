@@ -1,6 +1,6 @@
 # Stelios Vasileiou – Pixel Portfolio
 
-[**▶ Visit live site**](https://stuchain.github.io/stelios-vasileiou-cv/)
+[**▶ Visit live site**](https://stuchain.github.io/portfolio/)
 
 Minimal, CRT-inspired developer portfolio built with **Vite + React + TypeScript**.  
 Features pixel-art UI, scroll-aware navigation, keyboard shortcuts, and a single `profile.md` as the content source of truth.
@@ -13,7 +13,7 @@ Requires **Node.js 18+** and **npm**.
 
 ```bash
 git clone <this-repo-url>
-cd stelios-vasileiou-cv
+cd portfolio
 npm install
 npm run dev
 ```
