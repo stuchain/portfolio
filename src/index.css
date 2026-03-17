@@ -150,3 +150,33 @@ section[id] {
     padding: 0.5rem 0.75rem;
   }
 }
+
+/* Hero section */
+.hero-block {
+  padding: 2rem 1rem;
+  text-align: center;
+  max-width: 42rem;
+  margin: 0 auto;
+}
+
+.hero-name {
+  font-family: var(--font-pixel);
+  font-size: clamp(0.75rem, 4vw, 1rem);
+  margin: 0 0 1rem;
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.hero-tagline {
+  font-family: var(--font-sans);
+  color: var(--text-muted);
+  margin: 0 0 1.5rem;
+  font-size: 1rem;
+}
+
+.hero-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+}

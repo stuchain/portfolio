@@ -1,12 +1,12 @@
 import Nav from "./components/Nav";
+import Hero from "./components/Hero";
 
 function App() {
   return (
     <>
       <Nav />
       <section id="hero">
-        <h2>Hero</h2>
-        <p>Coming soon</p>
+        <Hero />
       </section>
       <section id="about">
         <h2>About</h2>
