@@ -9,8 +9,7 @@ on:
     branches: [main]
 
 permissions:
-  contents: read
-  contents: write   # allow push to gh-pages branch
+  contents: write   # checkout + push to gh-pages branch
 
 jobs:
   deploy:
