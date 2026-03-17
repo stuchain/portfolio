@@ -1,6 +1,7 @@
 import Nav from "./components/Nav";
 import Hero from "./components/Hero";
 import About from "./components/About";
+import Contact from "./components/Contact";
 
 function App() {
   return (
@@ -22,10 +23,7 @@ function App() {
         <h2>Skills</h2>
         <p>Coming soon</p>
       </section>
-      <section id="contact">
-        <h2>Contact</h2>
-        <p>Coming soon</p>
-      </section>
+      <Contact />
     </>
   );
 }
