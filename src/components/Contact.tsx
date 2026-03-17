@@ -1,13 +1,31 @@
-import { social } from "../data/social";
+import { social } from "../data/generated";
 import PixelPanel from "./ui/PixelPanel";
 import { useInView } from "../hooks/useInView";
+
+const EMAIL_ADDRESS = social.email.replace(/^mailto:/i, "").trim() || "you@example.com";
+
+function buildMailtoLink(form: HTMLFormElement): string {
+  const name = (form.querySelector('[name="name"]') as HTMLInputElement)?.value?.trim() ?? "";
+  const email = (form.querySelector('[name="email"]') as HTMLInputElement)?.value?.trim() ?? "";
+  const message = (form.querySelector('[name="message"]') as HTMLTextAreaElement)?.value?.trim() ?? "";
+  const subject = "Contact from portfolio";
+  const body = [name && `Name: ${name}`, email && `Email: ${email}`, message && `Message:\n${message}`]
+    .filter(Boolean)
+    .join("\n\n");
+  const params = new URLSearchParams();
+  params.set("subject", subject);
+  if (body) params.set("body", body);
+  return `mailto:${EMAIL_ADDRESS}?${params.toString()}`;
+}
 
 export default function Contact() {
   const { ref, isInView } = useInView();
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    // Mockup: no submission to server
+    const form = e.currentTarget;
+    const mailto = buildMailtoLink(form);
+    window.location.href = mailto;
   }
 
   return (

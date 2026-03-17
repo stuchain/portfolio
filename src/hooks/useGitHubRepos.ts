@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react'
-import { featuredRepos, featuredCount } from '../data/featuredRepos'
-import { fallbackRepos, type RepoMinimal } from '../data/fallbackRepos'
+import { profile, featuredRepos, featuredCount, fallbackRepos, type RepoMinimal } from '../data/generated'
 
-const GITHUB_API_URL = 'https://api.github.com/users/stuchain/repos?per_page=100'
+const GITHUB_API_URL = `https://api.github.com/users/${profile.githubUsername}/repos?per_page=100`
 
 function sortRepos(repos: RepoMinimal[]): RepoMinimal[] {
   const featuredSet = new Set(featuredRepos)

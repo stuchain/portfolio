@@ -1,4 +1,4 @@
-import { skills } from '../data/skills'
+import { skills } from '../data/generated'
 import { useInView } from '../hooks/useInView'
 
 export default function Skills() {

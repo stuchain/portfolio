@@ -66,15 +66,14 @@ The workflow uses **GitHub Actions** (upload-pages-artifact + deploy-pages). The
 
 ## Editing content
 
-All editable content lives in **`src/data/`**:
+**All content is in a single file:** **`profile.md`** in the repo root. Edit that file (YAML frontmatter) with your name, tagline, location, social links, bio, education, experience, skills, featured repos, and fallback repo descriptions. Do not edit files under `src/data/` by hand; they are generated from `profile.md`.
 
-- **Profile** (name, tagline, location, avatar) – `profile.ts`
-- **About** – `bio.ts`
-- **CV / Resume** (education, experience, skills, interests) – `cv.ts`
-- **Tech stack** – `skills.ts`
-- **Featured repos** – `featuredRepos.ts`
-- **Social links** (GitHub, LinkedIn, email) – `social.ts`
+After changing `profile.md`, run:
 
-Replace the following placeholders where indicated in the code: **CV PDF path** (e.g. in `src/components/CV.tsx`, set the Download CV link `href` to `/cv.pdf` after adding a PDF to `public/`); **LinkedIn URL** (in `src/data/social.ts`); **email link** (in `src/data/social.ts`, use a `mailto:` or contact URL).
+```bash
+npm run generate
+```
+
+(or run `npm run dev` or `npm run build`, which run generate automatically). Then the site uses your updated content.
 
 **Favicon:** A simple pixel-style placeholder favicon is in `public/favicon.ico`. You can replace it by dropping your own `favicon.ico` (e.g. 16×16 or 32×32) into `public/`; no code changes needed.

@@ -1,4 +1,4 @@
-import { bio } from "../data/bio";
+import { bio } from "../data/generated";
 import PixelPanel from "./ui/PixelPanel";
 import { useInView } from "../hooks/useInView";
 

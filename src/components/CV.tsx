@@ -1,4 +1,4 @@
-import { cv, type CVEntry } from '../data/cv'
+import { cv, type CVEntry } from '../data/generated'
 import PixelPanel from './ui/PixelPanel'
 import Skills from './Skills'
 import { useInView } from '../hooks/useInView'
@@ -35,22 +35,6 @@ export default function CV() {
         ))}
 
         <Skills />
-
-        <h3>Interests</h3>
-        <PixelPanel>
-          <ul className="cv-list">
-            {cv.interests.map((interest, i) => (
-              <li key={i}>{interest}</li>
-            ))}
-          </ul>
-        </PixelPanel>
-
-        {/* Replace href with path to CV PDF in public/ (e.g. /cv.pdf). */}
-        <p>
-          <a href="#" aria-label="Download Resume" className="pixel-btn pixel-btn--primary">
-            Download Resume
-          </a>
-        </p>
       </div>
     </section>
   )

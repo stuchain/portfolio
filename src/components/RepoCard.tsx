@@ -1,4 +1,4 @@
-import type { RepoMinimal } from '../data/fallbackRepos'
+import type { RepoMinimal } from '../data/generated'
 import PixelPanel from './ui/PixelPanel'
 
 function formatUpdatedAt(updated_at: string): string {

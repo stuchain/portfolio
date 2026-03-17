@@ -1,4 +1,4 @@
-import { social } from "../data/social";
+import { social } from "../data/generated";
 
 const navLinks = [
   { href: "#about", label: "About" },

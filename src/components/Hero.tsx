@@ -1,5 +1,4 @@
-import { profile } from "../data/profile";
-import { social } from "../data/social";
+import { profile, social } from "../data/generated";
 import PixelButton from "./ui/PixelButton";
 import BlinkingCursor from "./ui/BlinkingCursor";
 
