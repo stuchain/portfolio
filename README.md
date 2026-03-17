@@ -1,79 +1,113 @@
-# Stelios Vasileiou – Portfolio
+# Stelios Vasileiou – Pixel Portfolio
 
-Personal portfolio with a pixel-art UI.
+[**▶ Visit live site**](https://stuchain.github.io/stelios-vasileiou-cv/)
 
-## Tech stack
+Minimal, CRT-inspired developer portfolio built with **Vite + React + TypeScript**.  
+Features pixel-art UI, scroll-aware navigation, keyboard shortcuts, and a single `profile.md` as the content source of truth.
 
-- **Vite** – dev server and build
-- **React** – UI
-- **TypeScript** – types
+---
 
-## Prerequisites
+## Quick start
 
-- **Node.js** 18+ and **npm**
-
-## Setup
+Requires **Node.js 18+** and **npm**.
 
 ```bash
-git clone <repo-url>
-cd <repo-name>
+git clone <this-repo-url>
+cd stelios-vasileiou-cv
 npm install
-```
-
-## Run locally
-
-```bash
 npm run dev
 ```
 
-Open the URL shown in the terminal (e.g. http://localhost:5173).
+Then open the URL from the terminal (usually `http://localhost:5173`).
 
-## Build
+---
 
-```bash
-npm run build
+## Content: edit `profile.md` only
+
+All the text and links you see on the site come from **`profile.md`** in the repo root:
+
+- **Profile & hero:** name, GitHub username, tagline, location.
+- **Social links:** GitHub, LinkedIn, email, phone.
+- **About & Resume:** bio paragraphs, education, experience.
+- **Skills & projects:** skill categories, featured repos, fallback repos.
+
+Example (simplified) shape:
+
+```yaml
+name: Your Name
+githubUsername: your-github
+tagline: Full-Stack Developer
+location: City, Country
+
+social:
+  github: https://github.com/your-github
+  linkedin: https://www.linkedin.com/in/you/
+  email: mailto:you@example.com
+
+bio:
+  - "Short about paragraph 1."
+  - "Short about paragraph 2."
 ```
 
-Output is in the `dist/` directory.
-
-## Deploy to GitHub Pages
-
-The workflow uses **GitHub Actions** (upload-pages-artifact + deploy-pages). The site URL depends on the **repository name**:
-
-- Repo **`stuchain.github.io`** → https://stuchain.github.io/ (root URL)
-- Repo **`portfolio`** → https://stuchain.github.io/portfolio/
-- Repo **`stelios-vasileiou-cv`** → https://stuchain.github.io/stelios-vasileiou-cv/
-
-**404 redirect:** When a visitor hits an unknown path (e.g. `/some/missing/page`), GitHub Pages serves `public/404.html`, which redirects to `/` and shows a “Go home” link so they land on the SPA.
-
-### One-time setup (do this first)
-
-1. **Enable GitHub Pages**  
-   In the repo: **Settings → Pages**.
-
-2. **Set the publishing source**  
-   Under "Build and deployment":
-   - **Source:** choose **GitHub Actions** (not "Deploy from a branch").
-
-3. **Push to `main`**  
-   The workflow runs on push to `main`. After it succeeds, the site is live at the URL above.
-
-### If the site is still blank
-
-- **Check the repo name.** Only a repo named `portfolio` is served at `.../portfolio/`. If your repo is `stelios-vasileiou-cv`, open `.../stelios-vasileiou-cv/` instead.
-- **Check the workflow run.** Repo → **Actions** tab. The "Deploy to GitHub Pages" workflow should be green. If the **deploy** job failed, fix the error (e.g. permissions, environment).
-- **Confirm Pages source.** Settings → Pages → Source must be **GitHub Actions**. If it is "Deploy from a branch", switch it to **GitHub Actions** and push again.
-
-## Editing content
-
-**All content is in a single file:** **`profile.md`** in the repo root. Edit that file (YAML frontmatter) with your name, tagline, location, social links, bio, education, experience, skills, featured repos, and fallback repo descriptions. Do not edit files under `src/data/` by hand; they are generated from `profile.md`.
-
-After changing `profile.md`, run:
+Whenever you change `profile.md`, regenerate data with:
 
 ```bash
 npm run generate
 ```
 
-(or run `npm run dev` or `npm run build`, which run generate automatically). Then the site uses your updated content.
+or simply run:
 
-**Favicon:** A simple pixel-style placeholder favicon is in `public/favicon.ico`. You can replace it by dropping your own `favicon.ico` (e.g. 16×16 or 32×32) into `public/`; no code changes needed.
+```bash
+npm run dev
+```
+
+and the generator will run before the dev server. The script writes `src/data/generated.ts`; do **not** edit files in `src/data/` by hand (they are generated or types only).
+
+---
+
+## Commands
+
+- **`npm run dev`** – generate data from `profile.md` and start the Vite dev server.
+- **`npm run build`** – generate data, run TypeScript build, and produce a production bundle in `dist/`.
+- **`npm run preview`** – serve the built `dist/` locally for a production-like preview.
+
+---
+
+## Pixel-art UI / UX details
+
+- **CRT feel:** dark theme with subtle dot grid and scanline overlay.
+- **Pixel typography:** headings and nav use a pixel font for a retro terminal vibe.
+- **Centered layout:** hero, resume, projects, skills, and contact are centered with generous spacing.
+- **Scroll-aware nav:** the active section is highlighted in the top nav as you scroll.
+- **Keyboard shortcuts:** `Alt+1`…`Alt+6` jump to Hero, About, Resume, Projects, Skills, Contact.
+- **Smooth entrance animations:** sections fade in and slide up once as they enter the viewport, respecting `prefers-reduced-motion`.
+- **Project filters & cards:** language filters, lifted hover states, and consistent card shadows.
+- **Back to top:** a small floating button appears after scrolling past the hero, scrolling smoothly back up.
+
+---
+
+## Deployment (GitHub Pages or any static host)
+
+The app is just static files, so you can deploy the `dist/` folder to any static host.
+
+For this repo, it’s configured for **GitHub Pages** via **GitHub Actions**:
+
+1. In GitHub: **Settings → Pages**.
+2. Under **Build and deployment → Source**, choose **GitHub Actions**.
+3. Push to `main`. The workflow builds and deploys to:  
+   `https://stuchain.github.io/stelios-vasileiou-cv/`
+
+If you fork or rename the repo, the path segment after `github.io/` will change accordingly.
+
+---
+
+## Using this as a template
+
+If you want to adapt this portfolio for yourself:
+
+1. **Fork** the repo.
+2. Update **`profile.md`** with your own details (name, GitHub username, bio, CV, skills, repos).
+3. Run **`npm run build`** (or `npm run dev`) to regenerate `src/data/generated.ts`.
+4. Deploy the `dist/` folder to your host (GitHub Pages or elsewhere).
+
+Avoid editing anything under `src/data/` except for type definitions; content should always flow from `profile.md`.

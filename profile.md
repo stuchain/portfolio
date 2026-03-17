@@ -25,10 +25,6 @@ education:
     title: "Bachelor of Computer Science (BSc, 240 ECTs)"
     org: "Athens University of Economics and Business (AUEB), Athens, Greece"
     description: "Algorithms, Network Economics, Technological Innovation and Entrepreneurship. Thesis: Analysis of the Ethereum Ecosystem & Applications of Tokenization."
-  - period: "09/2017 – 06/2020"
-    title: General Lyceum
-    org: "Pythagoreio General Lyceum, Samos, Greece"
-    description: "Grade: 19.8/20."
 
 experience:
   - period: "02/2025 – Present"
