@@ -9,6 +9,12 @@ export default function Hero() {
       <h1 className="hero-name">{profile.name}</h1>
       <p className="hero-tagline">
         {profile.tagline}
+        {profile.taglineLine2 && (
+          <>
+            <br />
+            {profile.taglineLine2}
+          </>
+        )}
         <BlinkingCursor />
       </p>
       <div className="hero-ctas">

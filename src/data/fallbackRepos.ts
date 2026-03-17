@@ -15,12 +15,12 @@ const baseUrl = 'https://github.com/stuchain'
 export const fallbackRepos: RepoMinimal[] = [
   {
     name: 'CuePoint',
-    description: 'Cue point and media tooling.',
-    language: 'TypeScript',
+    description: 'Python app that enriches Rekordbox libraries with Beatport metadata using fuzzy matching and remix detection; reduces manual prep time for DJs.',
+    language: 'Python',
     stargazers_count: 0,
     updated_at: '2024-01-15T10:00:00Z',
     html_url: `${baseUrl}/CuePoint`,
-    topics: ['media', 'tools'],
+    topics: ['music', 'metadata', 'dj'],
   },
   {
     name: 'ctf-maze-arena',
@@ -33,12 +33,12 @@ export const fallbackRepos: RepoMinimal[] = [
   },
   {
     name: 'mini-secure-channel-solana',
-    description: 'Mini secure channel implementation on Solana.',
-    language: 'Rust',
+    description: 'Secure channel (Python, Ed25519, AEAD) demonstrating DH MITM attack and mitigation; integrates Solana on-chain Key Registry. UoM project.',
+    language: 'Python',
     stargazers_count: 0,
     updated_at: '2024-01-20T08:00:00Z',
     html_url: `${baseUrl}/mini-secure-channel-solana`,
-    topics: ['solana', 'blockchain'],
+    topics: ['solana', 'cryptography', 'secure-channel'],
   },
   {
     name: 'iot-oracle-gateway',
@@ -51,11 +51,11 @@ export const fallbackRepos: RepoMinimal[] = [
   },
   {
     name: 'AUEB',
-    description: 'University-related projects and coursework.',
+    description: 'Bachelor thesis: Ethereum ecosystem & tokenization. Coursework: e-commerce, P2P file-sharing, distributed booking (MapReduce), and more.',
     language: 'Java',
     stargazers_count: 0,
     updated_at: '2023-12-01T09:00:00Z',
     html_url: `${baseUrl}/AUEB`,
-    topics: ['education'],
+    topics: ['education', 'ethereum', 'thesis'],
   },
 ]

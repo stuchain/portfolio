@@ -12,7 +12,6 @@ export default function Contact() {
       <h2>Contact</h2>
       <div className="contact-content">
         <div className="contact-links">
-          {/* Replace with your LinkedIn URL */}
           <a
             href={social.github}
             className="contact-link"
@@ -29,10 +28,14 @@ export default function Contact() {
           >
             LinkedIn
           </a>
-          {/* Replace with mailto: or contact link */}
           <a href={social.email} className="contact-link">
             Email
           </a>
+          {social.phone && (
+            <a href={`tel:${social.phone}`} className="contact-link">
+              Phone
+            </a>
+          )}
         </div>
         <PixelPanel className="contact-form-wrapper">
           <h3>Send me a message</h3>

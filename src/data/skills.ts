@@ -6,9 +6,10 @@ export interface SkillCategory {
 }
 
 export const skills: SkillCategory[] = [
-  { category: 'Languages', items: ['TypeScript', 'JavaScript', 'Python', 'Solidity', 'Rust'] },
-  { category: 'Web', items: ['React', 'Vite', 'Node.js', 'HTML/CSS'] },
-  { category: 'Blockchain / Crypto', items: ['Ethereum', 'Solana', 'Smart contracts', 'Web3.js'] },
+  { category: 'Technical', items: ['Java', 'Python', 'Anchor', 'C++', 'JavaScript', 'SQL', 'HTML', 'CSS', 'Solidity'] },
+  { category: 'Web / Full-stack', items: ['React', 'Node.js', 'TypeScript'] },
+  { category: 'Blockchain / Crypto', items: ['Solana', 'Ethereum', 'Smart contracts', 'Web3', 'Secure channels', 'Ed25519', 'AEAD'] },
   { category: 'Tools', items: ['Git', 'Docker', 'Linux', 'VS Code'] },
-  { category: 'Other', items: ['REST APIs', 'CI/CD', 'Testing'] },
+  { category: 'Soft skills', items: ['Communication', 'Ownership', 'Problem-solving', 'Team collaboration', 'Critical thinking', 'Attention to detail'] },
+  { category: 'Languages', items: ['Greek (Native)', 'English (C2)', 'French (B2)'] },
 ]
