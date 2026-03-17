@@ -189,12 +189,18 @@ section[id] {
 /* About section */
 #about {
   padding: 2rem 1rem;
+  text-align: center;
+}
+
+#about h2 {
+  text-align: center;
 }
 
 .about-content {
   max-width: 42rem;
   margin: 0 auto;
   padding: 1.25rem;
+  text-align: left;
 }
 
 .about-content p {
@@ -208,10 +214,12 @@ section[id] {
 /* CV section */
 #cv {
   padding: 2rem 1rem;
+  text-align: center;
 }
 
 #cv h2 {
   margin: 0 0 1.5rem;
+  text-align: center;
 }
 
 #cv h3 {
@@ -219,15 +227,27 @@ section[id] {
   font-family: var(--font-pixel);
   font-size: 0.5rem;
   color: var(--text);
+  text-align: center;
 }
 
 #cv h3:first-of-type {
   margin-top: 0;
 }
 
+#cv > .pixel-panel {
+  max-width: 42rem;
+  margin: 0 auto 1rem;
+  text-align: left;
+}
+
+#cv > p {
+  text-align: center;
+}
+
 .cv-entry {
   max-width: 42rem;
-  margin: 0 0 1rem;
+  margin: 0 auto 1rem;
+  text-align: left;
 }
 
 .cv-entry .pixel-panel {
@@ -259,8 +279,10 @@ section[id] {
 
 .cv-list {
   list-style: disc;
-  margin: 0;
+  margin: 0 auto;
   padding-left: 1.5rem;
+  width: fit-content;
+  text-align: left;
 }
 
 .cv-list li {
@@ -282,10 +304,12 @@ section[id] {
 /* Skills section */
 #skills {
   padding: 2rem 1rem;
+  text-align: center;
 }
 
 #skills h2 {
   margin: 0 0 1.5rem;
+  text-align: center;
 }
 
 .skills-category {
@@ -301,6 +325,7 @@ section[id] {
   font-family: var(--font-pixel);
   font-size: 0.5rem;
   color: var(--text);
+  text-align: center;
 }
 
 .skill-badges {
@@ -308,8 +333,9 @@ section[id] {
   flex-wrap: wrap;
   gap: 0.5rem;
   list-style: none;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
+  justify-content: center;
 }
 
 .skill-badge {
@@ -331,17 +357,20 @@ section[id] {
 /* Projects section */
 #projects {
   padding: 2rem 1rem;
+  text-align: center;
 }
 
 #projects h2 {
   margin: 0 0 1.5rem;
+  text-align: center;
 }
 
 .projects-loading,
 .projects-error,
 .projects-empty {
-  margin: 0 0 1rem;
+  margin: 0 auto 1rem;
   color: var(--text-muted);
+  text-align: center;
 }
 
 .projects-error {
@@ -353,6 +382,7 @@ section[id] {
   flex-wrap: wrap;
   gap: 0.5rem;
   margin-bottom: 1.5rem;
+  justify-content: center;
 }
 
 .filter-chip {
@@ -387,6 +417,7 @@ section[id] {
   font-family: var(--font-pixel);
   font-size: 0.5rem;
   color: var(--text);
+  text-align: center;
 }
 
 .projects-subheading:first-of-type {
@@ -397,6 +428,10 @@ section[id] {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 1rem;
+  max-width: 72rem;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
 }
 
 .projects-grid--featured {
@@ -472,11 +507,17 @@ section[id] {
 /* Contact section */
 #contact {
   padding: 2rem 1rem;
+  text-align: center;
+}
+
+#contact h2 {
+  text-align: center;
 }
 
 .contact-content {
   max-width: 42rem;
   margin: 0 auto;
+  text-align: center;
 }
 
 .contact-links {
@@ -484,6 +525,7 @@ section[id] {
   flex-wrap: wrap;
   gap: 0.75rem;
   margin-bottom: 1.5rem;
+  justify-content: center;
 }
 
 .contact-link {
@@ -552,7 +594,7 @@ section[id] {
 }
 
 .contact-form .pixel-btn {
-  align-self: flex-start;
+  align-self: center;
 }
 
 /* Small screens: compact layout, reduced padding */
