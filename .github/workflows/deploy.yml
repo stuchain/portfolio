@@ -1,11 +1,16 @@
 # Build and deploy to GitHub Pages on push to main.
-# In repository Settings → Pages, set source to "Deploy from a branch" and choose branch: gh-pages (or use "GitHub Actions").
+# In repository Settings → Pages, set source to "Deploy from a branch" and choose branch: gh-pages.
+# Site will be at https://<user>.github.io/<repo-name>/
 
 name: Deploy to GitHub Pages
 
 on:
   push:
     branches: [main]
+
+permissions:
+  contents: read
+  contents: write   # allow push to gh-pages branch
 
 jobs:
   deploy:
@@ -23,6 +28,9 @@ jobs:
         run: npm ci
 
       - name: Build
+        env:
+          # Base path must match GitHub Pages URL: /<repo-name>/
+          VITE_BASE_PATH: /${{ github.event.repository.name }}/
         run: npm run build
 
       - name: Deploy to gh-pages
