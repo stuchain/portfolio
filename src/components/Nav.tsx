@@ -8,17 +8,28 @@ const navLinks = [
   { href: "#contact", label: "Contact" },
 ] as const;
 
-export default function Nav() {
+interface NavProps {
+  activeSectionId?: string;
+}
+
+export default function Nav({ activeSectionId }: NavProps) {
   return (
     <nav className="nav-bar" aria-label="Main navigation">
       <ul className="nav-list">
-        {navLinks.map(({ href, label }) => (
-          <li key={href}>
-            <a href={href} className="nav-link">
-              {label}
-            </a>
-          </li>
-        ))}
+        {navLinks.map(({ href, label }) => {
+          const sectionId = href.slice(1);
+          const isActive = activeSectionId === sectionId;
+          return (
+            <li key={href}>
+              <a
+                href={href}
+                className={`nav-link${isActive ? " nav-link--active" : ""}`}
+              >
+                {label}
+              </a>
+            </li>
+          );
+        })}
         <li>
           <a
             href={social.github}

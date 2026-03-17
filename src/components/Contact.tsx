@@ -1,7 +1,10 @@
 import { social } from "../data/social";
 import PixelPanel from "./ui/PixelPanel";
+import { useInView } from "../hooks/useInView";
 
 export default function Contact() {
+  const { ref, isInView } = useInView();
+
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     // Mockup: no submission to server
@@ -9,8 +12,12 @@ export default function Contact() {
 
   return (
     <section id="contact">
-      <h2>Contact</h2>
-      <div className="contact-content">
+      <div
+        ref={ref}
+        className={`fade-in-up${isInView ? " is-visible" : ""}`}
+      >
+        <h2>Contact</h2>
+        <div className="contact-content">
         <div className="contact-links">
           <a
             href={social.github}
@@ -68,6 +75,7 @@ export default function Contact() {
             </button>
           </form>
         </PixelPanel>
+      </div>
       </div>
     </section>
   );

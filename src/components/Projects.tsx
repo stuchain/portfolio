@@ -1,12 +1,14 @@
 import { useState, useMemo } from 'react'
 import { useGitHubRepos } from '../hooks/useGitHubRepos'
 import RepoCard from './RepoCard'
+import { useInView } from '../hooks/useInView'
 
 const ALL_LANG = 'All'
 
 export default function Projects() {
   const { repos, loading, error } = useGitHubRepos()
   const [langFilter, setLangFilter] = useState<string | null>(null)
+  const { ref, isInView } = useInView()
 
   const languages = useMemo(() => {
     const langs = [...new Set(repos.map((r) => r.language).filter(Boolean))] as string[]
@@ -20,7 +22,8 @@ export default function Projects() {
 
   return (
     <section id="projects">
-      <h2>Projects</h2>
+      <div ref={ref} className={`fade-in-up${isInView ? ' is-visible' : ''}`}>
+        <h2>Projects</h2>
 
       {loading && (
         <p className="projects-loading" aria-live="polite">
@@ -77,6 +80,7 @@ export default function Projects() {
           )}
         </>
       )}
+      </div>
     </section>
   )
 }

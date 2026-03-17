@@ -157,12 +157,72 @@ section[id] + section[id] {
   outline-offset: 2px;
 }
 
+.nav-link--active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
 @media (min-width: 600px) {
   .nav-link {
     font-size: 0.625rem;
     padding: 0.5rem 0.75rem;
   }
 }
+
+/* Back to top: fixed bottom-right, appears when scrolled past hero */
+.back-to-top {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 9;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-pixel);
+  font-size: 0.625rem;
+  color: var(--accent);
+  background: var(--surface);
+  border: var(--border-width) solid var(--border);
+  text-decoration: none;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.back-to-top--visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.back-to-top:hover {
+  border-color: var(--accent);
+}
+
+.back-to-top:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Section entrance animation */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.22s ease-out, transform 0.22s ease-out;
+}
+
+.fade-in-up.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-in-up--delay-1 { transition-delay: 50ms; }
+.fade-in-up--delay-2 { transition-delay: 100ms; }
+.fade-in-up--delay-3 { transition-delay: 150ms; }
+.fade-in-up--delay-4 { transition-delay: 200ms; }
+.fade-in-up--delay-5 { transition-delay: 250ms; }
 
 /* Hero section */
 .hero-block {
@@ -178,6 +238,12 @@ section[id] + section[id] {
   margin: 0 0 1rem;
   color: var(--text);
   line-height: 1.6;
+  animation: hero-float 4s ease-in-out infinite;
+}
+
+@keyframes hero-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(3px); }
 }
 
 .hero-tagline {
@@ -192,6 +258,12 @@ section[id] + section[id] {
   flex-wrap: wrap;
   gap: 0.75rem;
   justify-content: center;
+}
+
+.hero-ctas .pixel-btn:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 20px rgba(126, 231, 135, 0.15);
+  border-color: var(--accent);
 }
 
 /* About section */
@@ -267,6 +339,14 @@ section[id] + section[id] {
 
 .cv-entry .pixel-panel {
   padding: 1.25rem 1.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+@media (hover: hover) {
+  .cv-entry .pixel-panel:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+  }
 }
 
 .cv-entry-period {
@@ -367,12 +447,22 @@ section[id] + section[id] {
   border-radius: 0;
   background: var(--surface);
   color: var(--text);
+  transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
 }
 
 .skill-badge:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
 }
+
+@media (hover: hover) {
+  .skill-badge:hover {
+    border-color: var(--accent);
+    background: rgba(126, 231, 135, 0.08);
+    transform: scale(1.02);
+  }
+}
+
 
 /* Projects section */
 #projects {
@@ -456,9 +546,9 @@ section[id] + section[id] {
 }
 
 .repo-card:hover .repo-card-panel {
-  transform: scale(1.02);
+  transform: translateY(-2px) scale(1.02);
   border-color: var(--accent);
-  box-shadow: 0 0 0 1px var(--accent);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35), 0 0 0 1px var(--accent);
 }
 
 .repo-card-title {
@@ -644,16 +734,44 @@ section[id] + section[id] {
 /* Respect reduced-motion preference */
 @media (prefers-reduced-motion: reduce) {
   .pixel-btn,
-  .repo-card-panel {
+  .repo-card-panel,
+  .nav-link--active,
+  .back-to-top,
+  .cv-entry .pixel-panel,
+  .skill-badge {
     transition: none;
   }
 
-  .pixel-btn:hover {
+  .pixel-btn:hover,
+  .hero-ctas .pixel-btn:hover {
     transform: none;
   }
 
   .repo-card:hover .repo-card-panel {
     transform: none;
+  }
+
+  .cv-entry .pixel-panel:hover {
+    transform: none;
+  }
+
+  .skill-badge:hover {
+    transform: none;
+  }
+
+  .fade-in-up {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .fade-in-up.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  .hero-name {
+    animation: none;
   }
 
   .blinking-cursor {
