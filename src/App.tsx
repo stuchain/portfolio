@@ -1,6 +1,7 @@
 import Nav from "./components/Nav";
 import Hero from "./components/Hero";
 import About from "./components/About";
+import CV from "./components/CV";
 import Contact from "./components/Contact";
 
 function App() {
@@ -11,10 +12,7 @@ function App() {
         <Hero />
       </section>
       <About />
-      <section id="cv">
-        <h2>CV</h2>
-        <p>Coming soon</p>
-      </section>
+      <CV />
       <section id="projects">
         <h2>Projects</h2>
         <p>Coming soon</p>

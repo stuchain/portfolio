@@ -200,6 +200,80 @@ section[id] {
   margin-bottom: 0;
 }
 
+/* CV section */
+#cv {
+  padding: 2rem 1rem;
+}
+
+#cv h2 {
+  margin: 0 0 1.5rem;
+}
+
+#cv h3 {
+  margin: 2rem 0 0.75rem;
+  font-family: var(--font-pixel);
+  font-size: 0.5rem;
+  color: var(--text);
+}
+
+#cv h3:first-of-type {
+  margin-top: 0;
+}
+
+.cv-entry {
+  max-width: 42rem;
+  margin: 0 0 1rem;
+}
+
+.cv-entry .pixel-panel {
+  padding: 1rem 1.25rem;
+}
+
+.cv-entry-period {
+  margin: 0 0 0.25rem;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+.cv-entry-title {
+  margin: 0 0 0.25rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.cv-entry-org {
+  margin: 0 0 0.5rem;
+  font-size: 0.9375rem;
+  color: var(--text-muted);
+}
+
+.cv-entry-desc {
+  margin: 0;
+  font-size: 0.9375rem;
+}
+
+.cv-list {
+  list-style: disc;
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+.cv-list li {
+  margin-bottom: 0.25rem;
+}
+
+#cv .pixel-btn {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  font-size: 0.5rem;
+}
+
+#cv .pixel-btn:hover {
+  opacity: 0.9;
+}
+
 /* Contact section */
 #contact {
   padding: 2rem 1rem;
