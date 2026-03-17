@@ -1,4 +1,4 @@
-# Stelios Vasileiou – Pixel Portfolio
+# Stelios Vasileiou – Portfolio
 
 [**▶ Visit live site**](https://stuchain.github.io/portfolio/)
 
