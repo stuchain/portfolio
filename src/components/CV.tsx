@@ -1,5 +1,6 @@
 import { cv, type CVEntry } from '../data/cv'
 import PixelPanel from './ui/PixelPanel'
+import Skills from './Skills'
 
 function CVEntryCard({ entry }: { entry: CVEntry }) {
   return (
@@ -16,8 +17,8 @@ function CVEntryCard({ entry }: { entry: CVEntry }) {
 
 export default function CV() {
   return (
-    <section id="cv">
-      <h2>CV</h2>
+    <section id="resume">
+      <h2>Resume</h2>
 
       <h3>Education</h3>
       {cv.education.map((entry, i) => (
@@ -29,14 +30,7 @@ export default function CV() {
         <CVEntryCard key={i} entry={entry} />
       ))}
 
-      <h3>Skills</h3>
-      <PixelPanel>
-        <ul className="cv-list">
-          {cv.skills.map((s, i) => (
-            <li key={i}>{s}</li>
-          ))}
-        </ul>
-      </PixelPanel>
+      <Skills />
 
       <h3>Interests</h3>
       <PixelPanel>
@@ -49,8 +43,8 @@ export default function CV() {
 
       {/* Replace href with path to CV PDF in public/ (e.g. /cv.pdf). */}
       <p>
-        <a href="#" aria-label="Download CV" className="pixel-btn pixel-btn--primary">
-          Download CV
+        <a href="#" aria-label="Download Resume" className="pixel-btn pixel-btn--primary">
+          Download Resume
         </a>
       </p>
     </section>

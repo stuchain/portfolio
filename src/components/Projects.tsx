@@ -5,7 +5,7 @@ import RepoCard from './RepoCard'
 const ALL_LANG = 'All'
 
 export default function Projects() {
-  const { repos, loading, error, featuredCount } = useGitHubRepos()
+  const { repos, loading, error } = useGitHubRepos()
   const [langFilter, setLangFilter] = useState<string | null>(null)
 
   const languages = useMemo(() => {
@@ -17,13 +17,6 @@ export default function Projects() {
     if (!langFilter || langFilter === ALL_LANG) return repos
     return repos.filter((r) => r.language === langFilter)
   }, [repos, langFilter])
-
-  const featuredRepos = useMemo(
-    () => filteredRepos.slice(0, featuredCount),
-    [filteredRepos, featuredCount]
-  )
-
-  const showAllRepos = filteredRepos
 
   return (
     <section id="projects">
@@ -72,21 +65,11 @@ export default function Projects() {
           )}
 
           {filteredRepos.length > 0 && (
-            <>
-              <h3 className="projects-subheading">Featured Projects</h3>
-              <div className="projects-grid projects-grid--featured">
-                {featuredRepos.map((repo) => (
-                  <RepoCard key={repo.name} repo={repo} />
-                ))}
-              </div>
-
-              <h3 className="projects-subheading">All Repositories</h3>
-              <div className="projects-grid">
-                {showAllRepos.map((repo) => (
-                  <RepoCard key={repo.name} repo={repo} />
-                ))}
-              </div>
-            </>
+            <div className="projects-grid">
+              {filteredRepos.map((repo) => (
+                <RepoCard key={repo.name} repo={repo} />
+              ))}
+            </div>
           )}
 
           {filteredRepos.length === 0 && languages.length > 0 && (

@@ -16,6 +16,7 @@ html {
   --text-muted: #8b949e;
   --accent: #7ee787;
   --border: #30363d;
+  --separator: rgba(255, 255, 255, 0.06);
   --border-width: 3px;
   --font-pixel: "Press Start 2P", cursive;
   --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -53,6 +54,7 @@ body::after {
 .pixel-panel {
   border: var(--border-width) solid var(--border);
   border-radius: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
 }
 
 .pixel-btn {
@@ -108,6 +110,11 @@ body::after {
 /* Section scroll targets: avoid being hidden under sticky nav */
 section[id] {
   scroll-margin-top: 3rem;
+}
+
+/* Thin separator line between main sections */
+section[id] + section[id] {
+  border-top: 1px solid var(--separator);
 }
 
 /* Nav: sticky bar, pixel font, compact on small viewports */
@@ -188,19 +195,22 @@ section[id] {
 
 /* About section */
 #about {
-  padding: 2rem 1rem;
+  padding: 2.25rem 1.25rem;
   text-align: center;
 }
 
 #about h2 {
+  font-size: 1.5rem;
   text-align: center;
 }
 
 .about-content {
   max-width: 42rem;
   margin: 0 auto;
-  padding: 1.25rem;
+  padding: 1.5rem;
   text-align: left;
+  line-height: 1.6;
+  border-left: 4px solid var(--accent);
 }
 
 .about-content p {
@@ -211,47 +221,48 @@ section[id] {
   margin-bottom: 0;
 }
 
-/* CV section */
-#cv {
-  padding: 2rem 1rem;
+/* Resume section */
+#resume {
+  padding: 2.25rem 1.25rem;
   text-align: center;
 }
 
-#cv h2 {
+#resume h2 {
   margin: 0 0 1.5rem;
+  font-size: 1.5rem;
   text-align: center;
 }
 
-#cv h3 {
-  margin: 2rem 0 0.75rem;
+#resume h3 {
+  margin: 2.25rem 0 0.875rem;
   font-family: var(--font-pixel);
   font-size: 0.5rem;
   color: var(--text);
   text-align: center;
 }
 
-#cv h3:first-of-type {
+#resume h3:first-of-type {
   margin-top: 0;
 }
 
-#cv > .pixel-panel {
+#resume > .pixel-panel {
   max-width: 42rem;
-  margin: 0 auto 1rem;
+  margin: 0 auto 1.25rem;
   text-align: left;
 }
 
-#cv > p {
+#resume > p {
   text-align: center;
 }
 
 .cv-entry {
   max-width: 42rem;
-  margin: 0 auto 1rem;
+  margin: 0 auto 1.25rem;
   text-align: left;
 }
 
 .cv-entry .pixel-panel {
-  padding: 1rem 1.25rem;
+  padding: 1.25rem 1.5rem;
 }
 
 .cv-entry-period {
@@ -289,7 +300,7 @@ section[id] {
   margin-bottom: 0.25rem;
 }
 
-#cv .pixel-btn {
+#resume .pixel-btn {
   display: inline-block;
   margin-top: 1.5rem;
   padding: 0.5rem 1rem;
@@ -297,7 +308,7 @@ section[id] {
   font-size: 0.5rem;
 }
 
-#cv .pixel-btn:hover {
+#resume .pixel-btn:hover {
   opacity: 0.9;
 }
 
@@ -309,11 +320,12 @@ section[id] {
 
 #skills h2 {
   margin: 0 0 1.5rem;
+  font-size: 1.5rem;
   text-align: center;
 }
 
 .skills-category {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.75rem;
 }
 
 .skills-category:last-child {
@@ -331,7 +343,7 @@ section[id] {
 .skill-badges {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: 0.6rem;
   list-style: none;
   margin: 0 auto;
   padding: 0;
@@ -356,12 +368,13 @@ section[id] {
 
 /* Projects section */
 #projects {
-  padding: 2rem 1rem;
+  padding: 2.25rem 1.25rem;
   text-align: center;
 }
 
 #projects h2 {
   margin: 0 0 1.5rem;
+  font-size: 1.5rem;
   text-align: center;
 }
 
@@ -381,7 +394,7 @@ section[id] {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.75rem;
   justify-content: center;
 }
 
@@ -412,30 +425,14 @@ section[id] {
   outline-offset: 2px;
 }
 
-.projects-subheading {
-  margin: 1.5rem 0 0.75rem;
-  font-family: var(--font-pixel);
-  font-size: 0.5rem;
-  color: var(--text);
-  text-align: center;
-}
-
-.projects-subheading:first-of-type {
-  margin-top: 0;
-}
-
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 1rem;
+  gap: 1.25rem;
   max-width: 72rem;
   margin-left: auto;
   margin-right: auto;
   text-align: left;
-}
-
-.projects-grid--featured {
-  margin-bottom: 0.5rem;
 }
 
 .repo-card {
@@ -445,6 +442,7 @@ section[id] {
 .repo-card-panel {
   padding: 1rem 1.25rem;
   height: 100%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
   transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -506,11 +504,12 @@ section[id] {
 
 /* Contact section */
 #contact {
-  padding: 2rem 1rem;
+  padding: 2.25rem 1.25rem;
   text-align: center;
 }
 
 #contact h2 {
+  font-size: 1.5rem;
   text-align: center;
 }
 
@@ -612,7 +611,7 @@ section[id] {
   }
 
   #about,
-  #cv,
+  #resume,
   #projects,
   #skills,
   #contact {

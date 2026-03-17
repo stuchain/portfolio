@@ -2,7 +2,7 @@ import { social } from "../data/social";
 
 const navLinks = [
   { href: "#about", label: "About" },
-  { href: "#cv", label: "CV" },
+  { href: "#resume", label: "Resume" },
   { href: "#projects", label: "Projects" },
   { href: "#skills", label: "Skills" },
   { href: "#contact", label: "Contact" },
