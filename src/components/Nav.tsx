@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { social } from "../data/generated";
 import { useTheme } from "../contexts/ThemeContext";
+import useLocalPointer from "../hooks/useLocalPointer";
 
 const navLinks = [
   { href: "#about", label: "About" },
@@ -16,9 +17,16 @@ interface NavProps {
 
 export default function Nav({ activeSectionId }: NavProps) {
   const { mode, toggleMode } = useTheme();
+  const pointer = useLocalPointer();
 
   return (
-    <nav className="nav-bar" aria-label="Main navigation">
+    <nav
+      className="nav-bar"
+      aria-label="Main navigation"
+      onMouseMove={pointer.onMouseMove}
+      onMouseEnter={pointer.onMouseEnter}
+      onMouseLeave={pointer.onMouseLeave}
+    >
       <ul className="nav-list">
         {navLinks.map(({ href, label }) => {
           const sectionId = href.slice(1);

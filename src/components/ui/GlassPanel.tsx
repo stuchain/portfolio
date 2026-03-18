@@ -1,5 +1,6 @@
 import { motion, type HTMLMotionProps } from "framer-motion";
 import type { ReactNode } from "react";
+import useLocalPointer from "../../hooks/useLocalPointer";
 
 export interface GlassPanelProps extends Omit<HTMLMotionProps<"div">, "children"> {
   children: ReactNode;
@@ -16,17 +17,30 @@ export default function GlassPanel({
   ...rest
 }: GlassPanelProps) {
   const classes = `glass-panel${hoverable ? " glass-panel--hoverable" : ""} ${className}`.trim();
+  const pointer = useLocalPointer();
 
   if (_as === "section") {
     return (
-      <motion.section className={classes} {...(rest as HTMLMotionProps<"section">)}>
+      <motion.section
+        className={classes}
+        onMouseMove={pointer.onMouseMove}
+        onMouseEnter={pointer.onMouseEnter}
+        onMouseLeave={pointer.onMouseLeave}
+        {...(rest as HTMLMotionProps<"section">)}
+      >
         {children}
       </motion.section>
     );
   }
 
   return (
-    <motion.div className={classes} {...rest}>
+    <motion.div
+      className={classes}
+      onMouseMove={pointer.onMouseMove}
+      onMouseEnter={pointer.onMouseEnter}
+      onMouseLeave={pointer.onMouseLeave}
+      {...rest}
+    >
       {children}
     </motion.div>
   );

@@ -6,15 +6,17 @@ import {
   ACCENT_LABELS,
   FONT_LABELS,
   BG_LABELS,
+  GLASS_LABELS,
   type AccentColor,
   type FontFamily,
   type ThemeMode,
   type BackgroundStyle,
+  type GlassIntensity,
 } from "../../contexts/ThemeContext";
 
 export default function SettingsFAB() {
   const [open, setOpen] = useState(false);
-  const { mode, accent, font, background, setMode, setAccent, setFont, setBackground } = useTheme();
+  const { mode, accent, font, background, glassIntensity, setMode, setAccent, setFont, setBackground, setGlassIntensity } = useTheme();
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -54,6 +56,21 @@ export default function SettingsFAB() {
             </div>
 
             <div className="settings-section">
+              <div className="settings-label">Glass</div>
+              <div className="theme-toggle-pill">
+                {(["on", "off"] as GlassIntensity[]).map((key) => (
+                  <button
+                    key={key}
+                    className={`theme-toggle-opt${glassIntensity === key ? " theme-toggle-opt--active" : ""}`}
+                    onClick={() => setGlassIntensity(key)}
+                  >
+                    {GLASS_LABELS[key]}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <div className="settings-section">
               <div className="settings-label">Accent</div>
               <div className="settings-row">
                 {(Object.keys(ACCENT_MAP) as AccentColor[]).map((key) => (
@@ -71,11 +88,11 @@ export default function SettingsFAB() {
 
             <div className="settings-section">
               <div className="settings-label">Background</div>
-              <div className="settings-row">
+              <div className="settings-grid">
                 {(Object.keys(BG_LABELS) as BackgroundStyle[]).map((key) => (
                   <button
                     key={key}
-                    className={`font-option${background === key ? " font-option--active" : ""}`}
+                    className={`bg-option${background === key ? " bg-option--active" : ""}`}
                     onClick={() => setBackground(key)}
                   >
                     {BG_LABELS[key]}

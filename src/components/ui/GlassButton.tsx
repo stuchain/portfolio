@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import useLocalPointer from "../../hooks/useLocalPointer";
 
 export interface GlassButtonProps {
   children: ReactNode;
@@ -20,12 +21,16 @@ export default function GlassButton({
   const variantClass = variant === "primary" ? "glass-btn--primary" : "glass-btn--secondary";
   const baseClass = `glass-btn ${variantClass} ${className}`.trim();
   const isExternal = href?.startsWith("http") || href?.startsWith("mailto:") || href?.startsWith("//");
+  const pointer = useLocalPointer();
 
   if (href) {
     return (
       <a
         href={href}
         className={baseClass}
+        onMouseMove={pointer.onMouseMove}
+        onMouseEnter={pointer.onMouseEnter}
+        onMouseLeave={pointer.onMouseLeave}
         {...(isExternal && { target: "_blank", rel: "noopener noreferrer" })}
       >
         {children}
@@ -34,7 +39,14 @@ export default function GlassButton({
   }
 
   return (
-    <button type={type} className={baseClass} onClick={onClick}>
+    <button
+      type={type}
+      className={baseClass}
+      onClick={onClick}
+      onMouseMove={pointer.onMouseMove}
+      onMouseEnter={pointer.onMouseEnter}
+      onMouseLeave={pointer.onMouseLeave}
+    >
       {children}
     </button>
   );

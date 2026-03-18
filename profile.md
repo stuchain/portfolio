@@ -2,7 +2,7 @@
 name: Stelios Vasileiou
 githubUsername: stuchain
 tagline: Full-Stack Developer at Netcompany.
-taglineLine2: "Transitioning into Blockchain Development - Web3, cryptography."
+taglineLine2: "Transitioning into Blockchain Development - Web3, Cryptography."
 location: Athens, Greece
 avatarUrl: ""
 
@@ -20,7 +20,7 @@ bio:
 education:
   - period: "10/2025 – Present"
     title: "Master of Applied Informatics (2 years remote; 90 ECTs)"
-    org: "University of Macedonia, Thessaloniki, Greece"
+    org: "University of Macedonia (UoM), Thessaloniki, Greece"
     description: "Currently attending Blockchain, Cryptography and IoT courses."
   - period: "10/2020 – 02/2025"
     title: "Bachelor of Computer Science (BSc, 240 ECTs)"

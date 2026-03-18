@@ -33,6 +33,26 @@ function AppContent() {
 
   return (
     <>
+      <svg className="svg-filters" aria-hidden="true">
+        <defs>
+          <filter id="glass-edge-refraction" colorInterpolationFilters="sRGB">
+            <feTurbulence
+              type="fractalNoise"
+              baseFrequency="0.012"
+              numOctaves="3"
+              seed="2"
+              result="noise"
+            />
+            <feDisplacementMap
+              in="SourceGraphic"
+              in2="noise"
+              scale="4"
+              xChannelSelector="R"
+              yChannelSelector="G"
+            />
+          </filter>
+        </defs>
+      </svg>
       <AnimatedBackground />
       <Nav activeSectionId={activeSectionId ?? undefined} />
       <section id="hero">
