@@ -8,8 +8,8 @@ import type { SkillCategory } from './skills'
 export const profile: Profile = {
   "name": "Stelios Vasileiou",
   "githubUsername": "stuchain",
-  "tagline": "Full-Stack Developer at Netcompany.",
-  "taglineLine2": "Transitioning into Blockchain Development - Web3, Cryptography.",
+  "tagline": "Software Developer.",
+  "taglineLine2": "",
   "location": "Athens, Greece",
   "avatarUrl": ""
 }
@@ -22,9 +22,8 @@ export const social: Social = {
 }
 
 export const bio: string[] = [
-  "Full-Stack Developer at Netcompany, with a strong foundation in scalable web systems, UI architecture, and enterprise integrations.",
-  "Currently transitioning into Blockchain Development; building Web3 prototypes (Solana, Ethereum, cryptography, secure channels)",
-  "Bachelor thesis on Ethereum tokenization; built a Solana-based secure channel for decentralized identity verification."
+  "Full-Stack Developer with experience in the Danish banking sector, UI architecture, and enterprise integrations",
+  "Bachelor thesis on Ethereum tokenization; built a Solana-based secure channel for decentralized identity verification; developed an IoT Oracle Gateway for connecting IoT telemetry with blockchain-based verification."
 ]
 
 export const cv: CVData = {
@@ -115,6 +114,11 @@ export const featuredRepos: string[] = [
 ]
 
 export const featuredCount: number = 5
+
+export const excludedRepos: string[] = [
+  "stuchain",
+  "readme"
+]
 
 export const fallbackRepos: RepoMinimal[] = [
   {

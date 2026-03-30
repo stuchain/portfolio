@@ -66,6 +66,7 @@ const skills = Array.isArray(data.skills)
 
 const featuredRepos = Array.isArray(data.featuredRepos) ? data.featuredRepos : []
 const featuredCount = typeof data.featuredCount === 'number' ? data.featuredCount : featuredRepos.length
+const excludedRepos = Array.isArray(data.excludedRepos) ? data.excludedRepos : []
 
 const baseUrl = `https://github.com/${githubUsername}`
 const fallbackRepos = (Array.isArray(data.fallbackRepos) ? data.fallbackRepos : []).map((r) => ({
@@ -98,6 +99,8 @@ export const skills: SkillCategory[] = ${JSON.stringify(skills, null, 2)}
 export const featuredRepos: string[] = ${JSON.stringify(featuredRepos, null, 2)}
 
 export const featuredCount: number = ${JSON.stringify(featuredCount)}
+
+export const excludedRepos: string[] = ${JSON.stringify(excludedRepos, null, 2)}
 
 export const fallbackRepos: RepoMinimal[] = ${JSON.stringify(fallbackRepos, null, 2)}
 

@@ -59,6 +59,10 @@ featuredRepos:
   - AUEB
 featuredCount: 5
 
+excludedRepos:
+  - stuchain
+  - readme
+
 fallbackRepos:
   - name: CuePoint
     description: "Python app that enriches Rekordbox libraries with Beatport metadata using fuzzy matching and remix detection; reduces manual prep time for DJs."

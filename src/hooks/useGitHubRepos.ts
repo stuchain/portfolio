@@ -1,7 +1,19 @@
 import { useState, useEffect } from 'react'
-import { profile, featuredRepos, featuredCount, fallbackRepos, type RepoMinimal } from '../data/generated'
+import {
+  profile,
+  featuredRepos,
+  featuredCount,
+  fallbackRepos,
+  excludedRepos,
+  type RepoMinimal,
+} from '../data/generated'
 
 const GITHUB_API_URL = `https://api.github.com/users/${profile.githubUsername}/repos?per_page=100`
+
+function filterExcluded(repos: RepoMinimal[]): RepoMinimal[] {
+  const hidden = new Set(excludedRepos)
+  return repos.filter((r) => !hidden.has(r.name))
+}
 
 function sortRepos(repos: RepoMinimal[]): RepoMinimal[] {
   const featuredSet = new Set(featuredRepos)
@@ -39,7 +51,7 @@ export function useGitHubRepos() {
     fetch(GITHUB_API_URL)
       .then((res) => {
         if (!res.ok) {
-          setRepos([...fallbackRepos])
+          setRepos(sortRepos(filterExcluded([...fallbackRepos])))
           setError('Could not load live data; showing cached list.')
           return null
         }
@@ -48,10 +60,10 @@ export function useGitHubRepos() {
       .then((data: RepoMinimal[] | null) => {
         if (data === null) return
         const list = Array.isArray(data) ? data : []
-        setRepos(sortRepos(list))
+        setRepos(sortRepos(filterExcluded(list)))
       })
       .catch(() => {
-        setRepos([...fallbackRepos])
+        setRepos(sortRepos(filterExcluded([...fallbackRepos])))
         setError('Could not load live data; showing cached list.')
       })
       .finally(() => {
