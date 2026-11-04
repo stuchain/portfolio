@@ -14,7 +14,7 @@ social:
 
 bio:
   - "I'm Stelios, a Full-Stack Developer based in Athens, Greece, currently working at LoopCV. Before that I spent almost two years at Netcompany on a next-generation Danish banking platform, working on UI architecture, multitenancy and enterprise integrations."
-  - "My main project is [CuePoint](https://usecuepoint.com/), a free, open-source desktop app for DJs that cleans up Rekordbox libraries with official Beatport metadata. It fixes missing or wrong keys, BPM, genres and labels, finds duplicates and helps you discover new music. I also built muzpa-auto-search, a desktop tool that turns playlist exports into a fast search-and-download workflow."
+  - "My main project is [CuePoint](https://usecuepoint.com/), a free, open-source desktop app for DJs that cleans up Rekordbox libraries with official Beatport metadata. It fixes missing or wrong keys, BPM, genres and labels, finds duplicates and helps you discover new music."
   - "Beyond music tools, my work spans blockchain, cryptography and systems: a bachelor thesis on Ethereum tokenization, a Solana-based secure channel for decentralized key verification, an IoT oracle gateway that anchors signed telemetry on-chain, and ctf-maze-arena, a Rust and TypeScript arena for maze generation and solver visualization."
   - "Outside of coding, I love travelling, producing house music, and DJing, interests that strongly influence my creativity and the projects I'm building."
 
