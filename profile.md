@@ -13,8 +13,9 @@ social:
   phone: "+306982880304"
 
 bio:
-  - "I'm Stelios and I'm a Software Developer based in Athens, Greece with experience in the Danish banking sector, UI architecture, and enterprise integrations."
-  - "My work spans blockchain, cryptography, and developer-focused tools, including a bachelor thesis on Ethereum tokenization, a Solana-based secure-channel demo for decentralized identity verification, an IoT Oracle Gateway for connecting signed telemetry with on-chain verification, and CuePoint, a fully working app for cleaning and enriching Rekordbox libraries with official Beatport metadata."
+  - "I'm Stelios, a Full-Stack Developer based in Athens, Greece, currently working at LoopCV. Before that I spent almost two years at Netcompany on a next-generation Danish banking platform, working on UI architecture, multitenancy and enterprise integrations."
+  - "My main project is [CuePoint](https://usecuepoint.com/), a free, open-source desktop app for DJs that cleans up Rekordbox libraries with official Beatport metadata. It fixes missing or wrong keys, BPM, genres and labels, finds duplicates and helps you discover new music. I also built muzpa-auto-search, a desktop tool that turns playlist exports into a fast search-and-download workflow."
+  - "Beyond music tools, my work spans blockchain, cryptography and systems: a bachelor thesis on Ethereum tokenization, a Solana-based secure channel for decentralized key verification, an IoT oracle gateway that anchors signed telemetry on-chain, and ctf-maze-arena, a Rust and TypeScript arena for maze generation and solver visualization."
   - "Outside of coding, I love travelling, producing house music, and DJing, interests that strongly influence my creativity and the projects I'm building."
 
 education:
@@ -29,10 +30,14 @@ education:
     thesisUrl: "https://github.com/stuchain/AUEB/tree/main/Thesis"
 
 experience:
-  - period: "02/2025 – Present"
+  - period: "11/2026 – Present"
+    title: Full-Stack Developer
+    org: "LoopCV, Athens, Greece"
+    description: "Full-stack development on LoopCV, a platform that automates the job search."
+  - period: "02/2025 – 10/2026"
     title: Full-Stack Developer
     org: "Netcompany, Athens, Greece"
-    description: "Contributing to a next-generation Danish banking platform (NIL) for SDC: full-stack features (authentication, multitenancy, external integrations). Designed and implemented a scalable multitenant UI framework. Delivered system analysis and integration design documents for business-critical components."
+    description: "Contributed to a next-generation Danish banking platform (NIL) for SDC: full-stack features (authentication, multitenancy, external integrations). Designed and implemented a scalable multitenant UI framework. Delivered system analysis and integration design documents for business-critical components."
 
 secondaryExperience:
   - period: "01/2020 – Present"
@@ -46,7 +51,7 @@ secondaryExperience:
 
 skills:
   - category: Technical
-    items: [Java, Python, Anchor, C++, JavaScript, SQL, Solidity, React, Node.js, TypeScript]
+    items: [TypeScript, JavaScript, Python, Java, Rust, C++, SQL, Solidity, React, Next.js, Node.js, Docker]
   - category: "Soft skills"
     items: [Communication, Ownership, "Problem-solving", "Team collaboration", "Critical thinking", "Attention to detail"]
   - category: Languages
@@ -54,11 +59,16 @@ skills:
 
 featuredRepos:
   - CuePoint
+  - muzpa-auto-search
   - ctf-maze-arena
   - mini-secure-channel-solana
   - iot-oracle-gateway
   - AUEB
-featuredCount: 5
+featuredCount: 6
+
+# Website links shown on project cards (overrides the GitHub repo homepage).
+projectWebsites:
+  CuePoint: "https://usecuepoint.com/"
 
 excludedRepos:
   - stuchain
@@ -66,33 +76,39 @@ excludedRepos:
 
 fallbackRepos:
   - name: CuePoint
-    description: "Python app that enriches Rekordbox libraries with Beatport metadata using fuzzy matching and remix detection; reduces manual prep time for DJs."
+    description: "Free open source desktop app for DJs: clean up your Rekordbox library with Beatport. Fix missing or wrong keys, BPM, genres and labels, find duplicates and discover new music."
     language: Python
-    stargazers_count: 0
-    updated_at: "2024-01-15T10:00:00Z"
-    topics: [music, metadata, dj]
-  - name: ctf-maze-arena
-    description: "CTF maze challenge and arena."
-    language: Python
-    stargazers_count: 0
-    updated_at: "2024-02-01T12:00:00Z"
-    topics: [ctf, security]
-  - name: mini-secure-channel-solana
-    description: "Secure channel (Python, Ed25519, AEAD) demonstrating DH MITM attack and mitigation; integrates Solana on-chain Key Registry. UoM project."
-    language: Python
-    stargazers_count: 0
-    updated_at: "2024-01-20T08:00:00Z"
-    topics: [solana, cryptography, "secure-channel"]
-  - name: iot-oracle-gateway
-    description: "IoT oracle gateway for on-chain data."
+    stargazers_count: 11
+    updated_at: "2026-11-03T08:44:26Z"
+    topics: [music, metadata, dj, rekordbox, beatport]
+  - name: muzpa-auto-search
+    description: "Desktop app that opens Muzpa search links from playlist CSVs (Spotify exports, etc.) with a fast manual Run -> Download -> Next workflow."
     language: TypeScript
     stargazers_count: 0
-    updated_at: "2024-02-10T14:00:00Z"
-    topics: [iot, oracle]
+    updated_at: "2026-04-15T00:00:00Z"
+    topics: [music, desktop, automation]
+  - name: ctf-maze-arena
+    description: "A web arena for maze generation, algorithm visualization, and solver comparison. Built with Rust + TypeScript."
+    language: Rust
+    stargazers_count: 0
+    updated_at: "2026-09-15T00:00:00Z"
+    topics: [rust, algorithms, visualization]
+  - name: mini-secure-channel-solana
+    description: "A six-phase secure channel project demonstrating X25519 key exchange, MITM attacks, Ed25519 authentication, ChaCha20-Poly1305 AEAD, and Solana-based decentralized key verification."
+    language: Python
+    stargazers_count: 0
+    updated_at: "2026-04-01T00:00:00Z"
+    topics: [solana, cryptography, secure-channel]
+  - name: iot-oracle-gateway
+    description: "End-to-end IoT oracle: Python simulator publishes over MQTT; oracle aggregates, detects anomalies (EWMA/z-score), anchors hashes on-chain (Solidity/Hardhat); Streamlit dashboard."
+    language: Python
+    stargazers_count: 0
+    updated_at: "2026-04-01T00:00:00Z"
+    topics: [iot, oracle, mqtt, solidity]
   - name: AUEB
-    description: "Bachelor thesis: Ethereum ecosystem & tokenization. Coursework: e-commerce, P2P file-sharing, distributed booking (MapReduce), and more."
+    description: "A collection of AUEB coursework projects, covering blockchain thesis, distributed systems, web development and Python."
     language: Java
     stargazers_count: 0
-    updated_at: "2023-12-01T09:00:00Z"
+    updated_at: "2026-04-01T00:00:00Z"
     topics: [education, ethereum, thesis]
 ---

@@ -1,4 +1,5 @@
 import { bio, profile } from "../data/generated";
+import { renderInline } from "../utils/renderInline";
 
 export default function Hero() {
   const heroLines = bio.length > 0
@@ -12,7 +13,7 @@ export default function Hero() {
         <span className="hero-name-accent" aria-hidden="true" />
         {heroLines.map((line, index) => (
           <p key={`${line}-${index}`} className={index === 0 ? "hero-tagline" : "hero-meta"}>
-            {line}
+            {renderInline(line)}
           </p>
         ))}
       </div>

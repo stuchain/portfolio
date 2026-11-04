@@ -8,4 +8,5 @@ export interface RepoMinimal {
   updated_at: string
   html_url: string
   topics?: string[]
+  homepage?: string | null
 }
