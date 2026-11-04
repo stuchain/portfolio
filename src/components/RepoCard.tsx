@@ -1,4 +1,4 @@
-import type { RepoMinimal } from "../data/generated";
+import { projectWebsites, type RepoMinimal } from "../data/generated";
 
 function formatUpdatedAt(updated_at: string): string {
   if (!updated_at) return "\u2014";
@@ -18,6 +18,7 @@ export interface RepoCardProps {
 export default function RepoCard({ repo }: RepoCardProps) {
   const description = repo.description?.trim() || "No description";
   const updatedLabel = formatUpdatedAt(repo.updated_at);
+  const website = projectWebsites[repo.name] || repo.homepage?.trim() || "";
 
   return (
     <article className="project-item">
@@ -40,6 +41,16 @@ export default function RepoCard({ repo }: RepoCardProps) {
         <span aria-label={`${repo.stargazers_count} stars`}>
             ★ {repo.stargazers_count}
         </span>
+        {website && (
+          <a
+            className="project-website"
+            href={website}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Website<span aria-hidden> ↗</span>
+          </a>
+        )}
       </div>
     </article>
   );

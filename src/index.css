@@ -331,6 +331,12 @@ section[id] {
 }
 
 /* ===== About ===== */
+.hero-inner a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
 .about-body p:last-child {
   margin-bottom: 0;
 }
@@ -457,6 +463,14 @@ section[id] {
   gap: 0.55rem;
   font-size: 0.78rem;
   color: var(--text-muted);
+}
+
+.project-website {
+  color: var(--accent);
+}
+
+.project-website:hover {
+  text-decoration: underline;
 }
 
 .project-desc {
