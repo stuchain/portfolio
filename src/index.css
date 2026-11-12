@@ -804,30 +804,6 @@ textarea {
   caret-color: var(--accent);
 }
 
-/* Soft blinking block cursor after the name */
-.hero-name::after {
-  content: "";
-  display: inline-block;
-  width: 0.34em;
-  height: 0.66em;
-  margin-left: 0.14em;
-  vertical-align: -0.04em;
-  background: rgba(var(--accent-rgb), 0.45);
-  animation: terminal-blink 1.2s steps(1, end) infinite;
-}
-
-@keyframes terminal-blink {
-  50% {
-    opacity: 0;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .hero-name::after {
-    animation: none;
-  }
-}
-
 /* Slim, quiet scrollbar */
 html {
   scrollbar-width: thin;
